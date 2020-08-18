@@ -2,7 +2,7 @@
   <div class="head">
     <div class="title-item child-item" v-for="item in titles" v-bind:key="item.id" @mouseover="activeId=item.id" @mouseout="activeId=-1" @click="updateBody(item)">
       <div class="title-child" v-if="item.child" v-bind:class="{'active':item.id==activeId}">
-        <div class="child-item" v-for="it in item.child" v-bind:key="it.id" @click="updateBody(item)">
+        <div class="child-item" v-for="it in item.child" v-bind:key="it.id" @click="updateBody(it)">
           {{it.name}}
         </div>
       </div>
@@ -18,7 +18,7 @@ export default {
     return {
       titles:[{id:1,name:"首页"},
         {id:2,name:"关于我们"},
-        {id:3,name:"服务范围",child:[{id:31,name:"服务类"},{id:32,name:"咨询类"},{id:33,name:"工程设计类"},{id:34,name:"服务类"},]},
+        {id:3,name:"服务范围",child:[{id:31,name:"服务类"},{id:32,name:"咨询类"},{id:33,name:"工程设计类"},{id:34,name:"进出口类"},]},
         {id:4,name:"联系我们"}],
       activeId:-1
     }
